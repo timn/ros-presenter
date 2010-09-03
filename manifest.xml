@@ -8,5 +8,6 @@
   <url>http://ros.org/wiki/rospresenter</url>
   <depend package="roslib"/>
   <depend package="roscpp"/>
+  <depend package="std_srvs"/>
   <rosdep name="xpdf" /> 
 </package>
