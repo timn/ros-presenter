@@ -1,0 +1,12 @@
+<package>
+  <description brief="rospresenter">
+    ROS slide presentation program.
+  </description>
+  <author>Tim Niemueller</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/rospresenter</url>
+  <depend package="roslib"/>
+  <depend package="roscpp"/>
+  <rosdep name="xpdf" /> 
+</package>
