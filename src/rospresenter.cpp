@@ -52,7 +52,7 @@ class RosPresenter
   bool prev_page(std_srvs::Empty::Request &req,
 		 std_srvs::Empty::Response &resp)
   {
-    __xpdfctrl.next_page();
+    __xpdfctrl.prev_page();
     return true;
   }
 
