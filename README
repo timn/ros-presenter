@@ -1,0 +1,49 @@
+
+rospresenter: ROS Node for Slide Presentations
+==============================================
+
+This ROS package provides a node that can display PDF slides using Xpdf. It
+can show and hide a fullscreen presentation window, jump to specific slides
+or simply go forward and backward.
+
+It's a very simple version at the moment and unsafe! There are no check
+whatsoever performed on the files which should be opened. So do not expose
+this on an network that is not trustworthy, especially remember the security
+track record of Xpdf.
+
+Patches which add some sort of security precautions are gladly accepted. As
+are patches which add other any other useful kind of presentation media. If
+you want to work on that, please let me know to avoid double work.
+Ideas are:
+- Add GStreamer support for video/pictures/sound
+- Use poppler als alternative to Xpdf
+
+Requirements
+------------
+The following software packages are needed on your system in order to
+use actionlib_lua. Requirements marked with (*) have specific information
+further down below.
+
+- ROS 1.1			http://www.ros.org
+- Xpdf 3.02			http://www.foolabs.com/xpdf/
+
+Usage
+-----
+First, you need to run the ROS node by executing bin/rospresenter.
+Then rospresenter can be instructed like this:
+
+ Show PDF (opens window, file must exist on machineros presenter is running):
+  rosservice /rospresenter/load some_file.pdf
+
+ Goto next slide:
+  rosservice /rospresenter/page/next
+
+ Goto previous slide:
+  rosservice /rospresenter/page/prev
+
+ Goto slide N:
+  rosservice /rospresenter/page/goto N
+
+ Hide window:
+  rosservice /rospresenter/hide
+

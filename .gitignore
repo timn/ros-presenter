@@ -7,6 +7,7 @@
 /srv_gen/
 /srv/*/
 /msg/*/
+/ROS_NOBUILD
 /src/*/srv/
 /src/*/msg/
 /src/rospresenter/
