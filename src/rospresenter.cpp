@@ -30,9 +30,13 @@
 #include <rospresenter/Load.h>
 
 
+/** Interface XpdfControl with ROS.
+ * @author Tim Niemueller
+ */
 class RosPresenter
 {
  public:
+  /** Constructor. */
   RosPresenter()
     : __xpdfctrl("ROS_XPDF")
   {
@@ -43,6 +47,8 @@ class RosPresenter
     __srv_goto_page = __node_handle.advertiseService(name + "/page/goto", &RosPresenter::goto_page, this);
     __srv_hide = __node_handle.advertiseService(name + "/hide", &RosPresenter::hide, this);
   }
+
+  // Service callbacks
 
   bool next_page(std_srvs::Empty::Request &req,
 		 std_srvs::Empty::Response &resp)
