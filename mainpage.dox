@@ -2,7 +2,7 @@
 \mainpage
 \htmlinclude manifest.html
 
-\b rospresenter is ... 
+\b presenter is a ROS node for showing and controlling a slide presentation
 
 <!-- 
 Provide an overview of your package.

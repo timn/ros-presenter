@@ -1,11 +1,11 @@
 <package>
-  <description brief="rospresenter">
+  <description brief="presenter">
     ROS slide presentation program.
   </description>
   <author>Tim Niemueller</author>
   <license>GPLv2+</license>
   <review status="unreviewed" notes=""/>
-  <url>http://ros.org/wiki/rospresenter</url>
+  <url>http://ros.org/wiki/presenter</url>
   <depend package="roslib"/>
   <depend package="roscpp"/>
   <depend package="std_srvs"/>

@@ -1,6 +1,6 @@
 
 /***************************************************************************
- *  rospresenter.cpp - ROS slide presenter
+ *  presenter.cpp - ROS slide presenter
  *
  *  Created: Fri Sep  3 10:39:50 2010
  *  Copyright  2010  Tim Niemueller [www.niemueller.de]
@@ -26,26 +26,26 @@
 
 #include <ros/ros.h>
 #include <std_srvs/Empty.h>
-#include <rospresenter/GotoPage.h>
-#include <rospresenter/Load.h>
+#include <presenter/GotoPage.h>
+#include <presenter/Load.h>
 
 
 /** Interface XpdfControl with ROS.
  * @author Tim Niemueller
  */
-class RosPresenter
+class Presenter
 {
  public:
   /** Constructor. */
-  RosPresenter()
+  Presenter()
     : __xpdfctrl("ROS_XPDF")
   {
     std::string name = ros::this_node::getName();
-    __srv_load = __node_handle.advertiseService(name + "/load", &RosPresenter::load, this);
-    __srv_next_page = __node_handle.advertiseService(name + "/page/next", &RosPresenter::next_page, this);
-    __srv_prev_page = __node_handle.advertiseService(name + "/page/prev", &RosPresenter::prev_page, this);
-    __srv_goto_page = __node_handle.advertiseService(name + "/page/goto", &RosPresenter::goto_page, this);
-    __srv_hide = __node_handle.advertiseService(name + "/hide", &RosPresenter::hide, this);
+    __srv_load = __node_handle.advertiseService(name + "/load", &Presenter::load, this);
+    __srv_next_page = __node_handle.advertiseService(name + "/page/next", &Presenter::next_page, this);
+    __srv_prev_page = __node_handle.advertiseService(name + "/page/prev", &Presenter::prev_page, this);
+    __srv_goto_page = __node_handle.advertiseService(name + "/page/goto", &Presenter::goto_page, this);
+    __srv_hide = __node_handle.advertiseService(name + "/hide", &Presenter::hide, this);
   }
 
   // Service callbacks
@@ -71,15 +71,15 @@ class RosPresenter
     return true;
   }
 
-  bool goto_page(rospresenter::GotoPage::Request &req,
-		 rospresenter::GotoPage::Response &resp)
+  bool goto_page(presenter::GotoPage::Request &req,
+		 presenter::GotoPage::Response &resp)
   {
     __xpdfctrl.goto_page(req.page);
     return true;
   }
 
-  bool load(rospresenter::Load::Request &req,
-	    rospresenter::Load::Response &resp)
+  bool load(presenter::Load::Request &req,
+	    presenter::Load::Response &resp)
   {
     // check file name
     std::string filename = req.filename;
@@ -101,8 +101,8 @@ class RosPresenter
 int
 main(int argc, char **argv)
 {
-  ros::init(argc, argv, "rospresenter");
-  RosPresenter rospresenter;
+  ros::init(argc, argv, "presenter");
+  Presenter presenter;
   ros::spin();
   return 0;
 }

@@ -10,4 +10,4 @@
 /ROS_NOBUILD
 /src/*/srv/
 /src/*/msg/
-/src/rospresenter/
+/src/presenter/

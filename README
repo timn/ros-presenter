@@ -1,6 +1,6 @@
 
-rospresenter: ROS Node for Slide Presentations
-==============================================
+presenter: ROS Node for Slide Presentations
+===========================================
 
 This ROS package provides a node that can display PDF slides using Xpdf. It
 can show and hide a fullscreen presentation window, jump to specific slides
@@ -29,21 +29,21 @@ further down below.
 
 Usage
 -----
-First, you need to run the ROS node by executing bin/rospresenter.
-Then rospresenter can be instructed like this:
+First, you need to run the ROS node by executing bin/presenter.
+Then presenter can be instructed like this:
 
  Show PDF (opens window, file must exist on machineros presenter is running):
-  rosservice /rospresenter/load some_file.pdf
+  rosservice /presenter/load some_file.pdf
 
  Goto next slide:
-  rosservice /rospresenter/page/next
+  rosservice /presenter/page/next
 
  Goto previous slide:
-  rosservice /rospresenter/page/prev
+  rosservice /presenter/page/prev
 
  Goto slide N:
-  rosservice /rospresenter/page/goto N
+  rosservice /presenter/page/goto N
 
  Hide window:
-  rosservice /rospresenter/hide
+  rosservice /presenter/hide
 

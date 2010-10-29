@@ -16,5 +16,5 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
 rosbuild_gensrv()
 
-rosbuild_add_executable(rospresenter src/rospresenter.cpp src/xpdfctrl.cpp)
+rosbuild_add_executable(presenter src/presenter.cpp src/xpdfctrl.cpp)
 
